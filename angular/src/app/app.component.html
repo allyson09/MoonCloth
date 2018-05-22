@@ -1,0 +1,230 @@
+<div id="topadd" class="text-center">
+  <h6>Free Shipping on $75+ Orders and Free Returns</h6>
+</div>
+<div class="container">
+  <div class="row" id="header">
+      <div class="col-md-4 header">
+        <form>
+          <input type="text" name="search" placeholder="Search here">
+        </form>
+      </div>
+      <div class="col-md-4 header">
+        <p id="title">M O O N C L O T H</p>
+      </div>
+      <div *ngIf="loggedList.length === 0" id="user-side" class="col-md-4 header">
+        <p>
+          <a [routerLink]="['login']">Sign In</a> | 
+          <a [routerLink]="['join']">Join</a>
+          <a [routerLink]="['loves']">Loves</a>
+        </p>
+      </div>
+      <div *ngIf="loggedList.length > 0" id="user-side" class="col-md-4 header">
+        <p>
+          <a (click)="logout()">Logout</a> | 
+          <a [routerLink]="['loves']">Loves</a>
+        </p>
+      </div>
+  </div>
+  <div class="row" id="nav">
+    <div class="col-md-12 text-center">
+      <a (mouseenter)="DayMenuOn(); MoonMenuOff(); AccMenuOff(); CosMenuOff()" (click)="DayMenuOff()" class="nav" [routerLink]="['daylight']">DAYLIGHT</a>
+      <a (mouseenter)="MoonMenuOn(); DayMenuOff(); AccMenuOff(); CosMenuOff()" (click)="MoonMenuOff()" class="nav" [routerLink]="['moonlight']">MOONLIGHT</a>
+      <a (mouseenter)="AccMenuOn(); DayMenuOff(); MoonMenuOff(); CosMenuOff()" (click)="AccMenuOff()" class="nav" [routerLink]="['accessories']">ACCESSORIES</a>
+      <a (mouseenter)="CosMenuOn(); DayMenuOff(); MoonMenuOff(); AccMenuOff()" (click)="CosMenuOff()" class="nav" [routerLink]="['moon-gallery']">OUTFIT PHOTOS</a>
+      <a [routerLink]="['admin']" *ngIf="admin === 'yay'">Admin Tools</a>
+    </div>
+  </div>
+</div>
+<div class="sub-menu-wrap" *ngIf="daylight == true" class="menus" (mouseleave)="DayMenuOff()">
+  <div class="container">
+    <div class="row">
+      <div class="col sub-menu">
+        <div class="row">
+          <div class="col-md-4 categories">
+            <h3 class="menu-title">Categories</h3>
+            <div>
+              <a class="link-lines" [routerLink]="['daylight/school']">School</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['daylight/dresses']">Dresses</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['daylight/casual']">Casual</a>
+            </div>
+          </div>
+          <div class="col-md-4 featured">
+            <h3 class="menu-title">Features</h3>
+            <div>
+              <a class="link-lines" [routerLink]="['bloop']">Inner Senshi</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['bloop']">Outer Senshi</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-6 menu-pics">
+                <img class="menupic" id="day1" src="/assets/images/incas1.jpg" alt="bloop">
+                <div class="menupiccap" id="day1cap">
+                  <p class="mctext">Spring Looks</p>
+                </div>
+              </div>
+              <div class="col-md-6 menu-pics">
+                  <img class="menupic" id="day2" src="/assets/images/outcas3.jpg" alt="bloop">
+                  <div class="menupiccap" id="day2cap">
+                    <p class="mctext">Recital Collection</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sub-menu-wrap" *ngIf="moonlight == true" class="menus" (mouseleave)="MoonMenuOff()">
+  <div class="container">
+    <div class="row">
+      <div class="col sub-menu">
+        <div class="row">
+          <div class="col-md-4 categories">
+            <h3 class="menu-title">Categories</h3>
+            <div>
+              <a class="link-lines" [routerLink]="['moonlight/battle-wear']">Battle Wear</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['moonlight/disguises']">Disguises</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['moonlight/kingdom']">Kingdom Wear</a>
+            </div>
+          </div>
+          <div class="col-md-4 featured">
+            <h3 class="menu-title">Features</h3>
+            <div>
+              <a class="link-lines" [routerLink]="['bloop']">Inner Senshi</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['bloop']">Outer Senshi</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <p class="col-md-6 menu-pics">pictures</p>
+              <p class="col-md-6 menu-pics">pictures</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sub-menu-wrap" *ngIf="accessories == true" class="menus" (mouseleave)="AccMenuOff()">
+  <div class="container">
+    <div class="row">
+      <div class="col sub-menu">
+        <div class="row">
+          <div class="col-md-4 categories">
+            <h3 class="menu-title">Categories</h3>
+            <div>
+              <a class="link-lines" [routerLink]="['daylight/school']">School</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['daylight/dresses']">Dresses</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['daylight/casual']">Casual</a>
+            </div>
+          </div>
+          <div class="col-md-4 featured">
+            <h3 class="menu-title">Features</h3>
+            <div>
+              <a class="link-lines" [routerLink]="['bloop']">Inner Senshi</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['bloop']">Outer Senshi</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <p class="col-md-6 menu-pics">pictures</p>
+              <p class="col-md-6 menu-pics">pictures</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sub-menu-wrap" *ngIf="cosplay == true" class="menus" (mouseleave)="CosMenuOff()">
+  <div class="container">
+    <div class="row">
+      <div class="col sub-menu">
+        <div class="row">
+          <div class="col-md-4 categories">
+            <h3 class="menu-title">Categories</h3>
+            <div>
+              <a class="link-lines" [routerLink]="['daylight/school']">School</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['daylight/dresses']">Dresses</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['daylight/casual']">Casual</a>
+            </div>
+          </div>
+          <div class="col-md-4 featured">
+            <h3 class="menu-title">Features</h3>
+            <div>
+              <a class="link-lines" [routerLink]="['bloop']">Inner Senshi</a>
+            </div>
+            <div>
+              <a class="link-lines" [routerLink]="['bloop']">Outer Senshi</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <p class="col-md-6 menu-pics">pictures</p>
+              <p class="col-md-6 menu-pics">pictures</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
+<div id="copy" class="container">
+  <div class="row justify-content-center" id="offers">
+    <div col="col-md-12">
+      <input class="col-md" id="offersubmit" type="submit" value="SUBMIT">
+    </div>
+  </div>
+  <div class="row">
+    <div class="links col-md-4">
+      <div class="linkdata">
+        <p>ACCOUNT</p>
+        <a href="">My Info</a>
+        <a href="">My Loved Items</a>
+        <a href="">Wishlist</a>
+      </div>
+    </div>
+    <div class="links col-md-4">
+      <div class="linkdata">
+        <p>COMPANY</p>
+        <a href="">About Us</a>
+        <a href="">Blog</a>
+        <a href="">Careers</a>
+      </div>
+    </div>
+    <div class="links col-md-4">
+      <div class="linkdata">
+        <p>FOLLOW</p>
+        <a href="">Image</a>
+        <a href="">Image</a>
+        <a href="">Image</a>
+      </div>
+    </div>
+  </div>
+</div>

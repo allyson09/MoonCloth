@@ -1,0 +1,79 @@
+#wrap{
+    background-color: #f7f2ee;
+    margin-top: 15px;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+#join{
+    background-color: white;
+    width: 1000px;
+    margin-top: 70px;
+}
+#copy{
+    background-color: white;
+    width: 1000px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+#info{
+    margin-left: 40px;
+    margin-top: 50px;
+}
+h1{
+    font-family: "Didot", serif;
+    font-style: italic;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+p{
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 0px;
+}
+.sectitle{
+    width: 890px;
+    border-bottom: 1px solid #ffdad4;
+    margin-bottom: 10px;
+}
+.val{
+    color: gray;
+}
+input{
+    height: 45px;
+    width: 500px;
+}
+.inputs{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#submit{
+    height: 45px;
+    width: 230px;
+    background-color: #c9ebde;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #035256;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+#offeremail{
+    display: block;
+    width: 370px;
+}
+#offersubmit{
+    background-color: #f6898a;
+    border: none;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+    width: 160px;
+}
+.linkdata a{
+    display: block;
+    align-items: center;
+}
+#offers{
+    margin-top: 50px;
+}

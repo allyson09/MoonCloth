@@ -1,0 +1,48 @@
+#Carousel{
+    width: 100%;
+    margin-top: 20px;
+}
+#minititle{
+    font-style: italic;
+    font-weight: lighter;
+    margin-left: 15px;
+    color: gray;
+}
+#wrap{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.arrows{
+    width: 10px;
+    margin-left: 15px;
+}
+h3{
+    background-color: #f2efea;
+    height: 38px;
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.filterlink{
+    color: black;
+}
+h2{
+    font-size: 22px;
+    font-weight: bold;
+}
+select{
+    height: 40px;
+    width: 20%;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.color{
+    width: 10%;
+}
+#itemwrap{
+    margin-top: 20px;
+}
+.itemPics{
+   height: 250px;
+}

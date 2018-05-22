@@ -1,0 +1,64 @@
+<div id="wrap" class="container">
+  <div id="join" class="container">
+    <div id="info" class="container">
+      <div class="row">
+        <h1 class="col">Register</h1>
+      </div>
+      <form (submit)="register()">
+        <div class="row justify-content-between sectitle">
+          <p class="col-md-6">Name</p>
+          <p class="col-md-6 val">Required*</p>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-md-12 inputs">
+            <p class="col-md-2">*First Name</p>
+            <input class="col-md-2" type="text" name="firstName" #firstName="ngModel" required [(ngModel)]="reg.firstName">
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-md-12 inputs">
+            <p class="col-md-2">*Last Name</p>
+            <input class="col-md-2" type="text" name="lastName" #lastName="ngModel" required [(ngModel)]="reg.lastName">
+          </div>
+        </div>
+        <div class="row justify-content-between sectitle">
+          <p class="col-md-6">Login Information</p>
+          <p class="col-md-6 val">Required*</p>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-md-12 inputs">
+            <p class="col-md-2">*Email</p>
+            <input class="col-md-2" type="text" name="email" #email="ngModel" required [(ngModel)]="reg.email">
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-md-12 inputs">
+            <p class="col-md-2">*Confirm Email</p>
+            <input class="col-md-2" type="text" name="cemail" #cemail="ngModel" required [(ngModel)]="reg.cemail">
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-md-12 inputs">
+            <p class="col-md-2">*Password</p>
+            <input class="col-md-2" type="password" name="password" #password="ngModel" required [(ngModel)]="reg.password">
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-md-12 inputs">
+            <p class="col-md-2">*Confirm Password</p>
+            <input class="col-md-2" type="password" name="cpassword" #cpassword="ngModel" required [(ngModel)]="reg.cpassword">
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-md-12 inputs">
+            <p class="col-md-2">Admin Password</p>
+            <input class="col-md-2" type="password" name="admin" #cpassword="ngModel" required [(ngModel)]="reg.admin">
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <input class="col-md-12" id="submit" type="submit" value="Continue">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<div id="wrap">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="Carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="Carousel" data-slide-to="1"></li>
+                    <li data-target="Carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="/assets/images/daycar1.jpg" class="img-responsive">
+                    </div>
+                    <div class="item">
+                        <img src="/assets/images/daycar3.jpg" class="img-responsive">
+                    </div>
+                    <div class="item">
+                        <img src="/assets/images/daycar2.jpg" class="img-responsive">
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#Carousel" data-slide="prev" style="background: none">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#Carousel" data-slide="next" style="background: none">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <p id="minititle">Daylight</p>
+    </div>
+    <div class="row">
+        <div id="filter" class="col-md-3">
+            <div>
+                <h3>Category</h3>
+                <div class="row">
+                    <img src="/assets/images/arrow.svg" alt="bloop" class="col arrows">
+                    <a href="" class="col filterlink">School</a>
+                </div>
+                <div class="row">
+                    <img src="/assets/images/arrow.svg" alt="bloop" class="col arrows">
+                    <a href="" class="col filterlink">Casual</a>
+                </div>
+                <div class="row">
+                    <img src="/assets/images/arrow.svg" alt="bloop" class="col arrows">
+                    <a href="" class="col filterlink">Dresses</a>
+                </div>
+            </div>
+            <div>
+                <h3>Color</h3>
+                <div id="colors">
+                    <img src="/assets/images/pinkcirc.png" id="pink" class="color">
+                    <img src="/assets/images/yellowcirc.png" id="yellow" class="color">
+                    <img src="/assets/images/bluecirc.png" id="blue" class="color">
+                    <img src="/assets/images/greencirc.png" id="green" class="color">
+                    <img src="/assets/images/purplecirc.svg" id="purple" class="color">
+                    <img src="/assets/images/redcirc.png" id="red" class="color">
+                </div>
+            </div>
+            <div>
+                <h3>Size</h3>
+                <p>sizes...</p>
+            </div>
+            <div>
+                <h3>Price</h3>
+                <p></p>
+            </div>
+        </div>
+        <div id="main" class="col-md-9">
+            <h2 class="row">Daylight</h2>
+            <div id="itemNav" class="row">
+                <select class="col-md-2">
+                    <option>Cheapest</option>
+                    <option>Newest</option>
+                    <option>Bloops</option>
+                </select>
+                <select class="col-md-2">
+                    <option>Show 100</option>
+                    <option>Show All</option>
+                    <option>Show 20</option>
+                </select>
+                <div class="col-md-6 align-self-end">
+                    <span>1-100 of 648 Results</span>
+                    <span><< 1 2 3 4 5 >></span>
+                </div>
+            </div>
+            <div id="itemwrap" *ngFor="let outfit of outfits">
+                <div class="item col">
+                    <img class="itemPics row" src="{{outfit.image}}" alt="bloop">
+                    <div class="row">
+                        <span class="col">{{outfit.title}}</span>
+                        <span class="col align-self-end">heart</span>
+                    </div>
+                    <p class="row">
+                        {{outfit.price}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

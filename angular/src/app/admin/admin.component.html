@@ -1,0 +1,35 @@
+<div id="wrap" class="container">
+  <h2>Add Outfit</h2>
+  <form (submit)="create()">
+    Title: <input type="text" name="title" #title="ngModel" required [(ngModel)]="outfit.title"><br>
+    Price: <input type="text" name="price" #price="ngModel" required [(ngModel)]="outfit.price"><br>
+    Description: <input type="text" name="description" #description="ngModel" required [(ngModel)]="outfit.description"><br>
+    Category: <input type="text" name="category" #category="ngModel" required [(ngModel)]="outfit.category"><br>
+    SubCategory: <input type="text" name="subCategory" #subCategory="ngModel" required [(ngModel)]="outfit.subCategory"><br>
+    Quantity: <input type="text" name="quantity" #quantity="ngModel" required [(ngModel)]="outfit.quantity"><br>
+    Sizes: 
+    <div>
+      XS: <input type="text" name="XS" #XS="ngModel" [(ngModel)]="outfit.sizes[0].XS">
+      S: <input type="text" name="S" #S="ngModel" [(ngModel)]="outfit.sizes[0].S">
+      M: <input type="text" name="M" #M="ngModel" [(ngModel)]="outfit.sizes[0].M">
+      L: <input type="text" name="L" #L="ngModel" [(ngModel)]="outfit.sizes[0].L">
+      XL: <input type="text" name="XL" #XL="ngModel" [(ngModel)]="outfit.sizes[0].XL">
+    </div><br>
+    Colors: 
+    <div>
+      Red: <input type="checkbox" name="color" value="red" #red="ngModel" [(ngModel)]="outfit.colors[0].red">
+      Orange: <input type="checkbox" name="color" value="orange" #orange="ngModel" [(ngModel)]="outfit.colors[0].orange">
+      yellow: <input type="checkbox" name="color" value="yellow" #yellow="ngModel" [(ngModel)]="outfit.colors[0].yellow">
+      green: <input type="checkbox" name="color" value="green" #green="ngModel" [(ngModel)]="outfit.colors[0].green">
+      blue: <input type="checkbox" name="color" value="blue" #blue="ngModel" [(ngModel)]="outfit.colors[0].blue">
+      purple: <input type="checkbox" name="color" value="purple" #purple="ngModel" [(ngModel)]="outfit.colors[0].purple">
+      Pink: <input type="checkbox" name="color" value="pink" #pink="ngModel" [(ngModel)]="outfit.colors[0].pink">
+      brown: <input type="checkbox" name="color" value="brown" #brown="ngModel" [(ngModel)]="outfit.colors[0].brown">
+      black: <input type="checkbox" name="color" value="black" #black="ngModel" [(ngModel)]="outfit.colors[0].black">
+      white: <input type="checkbox" name="color" value="white" #white="ngModel" [(ngModel)]="outfit.colors[0].white">
+    </div><br>
+    Image: <input type="text" name="image" #image="ngModel" [(ngModel)]="outfit.image"><br>
+    <input type="submit" value="ayyyyyye"><br>
+    <img src="{{outfit.image}}" alt="bloop">
+  </form>
+</div>
