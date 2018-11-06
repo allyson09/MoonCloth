@@ -8,10 +8,12 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class DataService {
   loggedList = [];
+  sessionId;
 
   constructor(private http: Http) { }
 
   register (data) {
+    //look inter Observables more later, loggedList[]
     this.loggedList.push(data.email);
     return this.http.post('/register', data)
       .map(response => response.json()).toPromise();
@@ -21,6 +23,12 @@ export class DataService {
     return this.http.post('/login', data)
       .map(response => response.json()).toPromise();
   }
+  // loggedUser() {
+  //   this.sessionId = this.http.get('/loggedUser')
+  //   .map(response => response.json()).toPromise();
+  //   return this.http.get('/loggedUser')
+  //     .map(response => response.json()).toPromise();
+  // }
   logout() {
     this.loggedList = [];
     return this.http.get('/logout')
@@ -40,5 +48,13 @@ export class DataService {
   getDaylight() {
     return this.http.get('/getDaylight')
     .map(response => response.json()).toPromise();
+  }
+  getLikedOutfits() {
+    return this.http.get('/getLikedOutfits')
+    .map(response => response.json()).toPromise();
+  }
+  likeOutfit(data) {
+    return this.http.post('/likeOutfit', data)
+      .map(response => response.json()).toPromise();
   }
 }

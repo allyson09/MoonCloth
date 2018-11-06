@@ -24,7 +24,16 @@ module.exports = function (app) {
     app.get('/getDaylight', function(req, res) {
         outfit.getDaylight(req, res);
     })
+    app.get('/getLikedOutfits', function(req, res) {
+        user.getLikedOutfits(req, res);
+    })
     app.post('/createOutfit', function(req, res) {
         admin.createOutfit(req, res);
+    })
+    app.post('/likeOutfit', function(req, res) {
+        user.likeOutfit(req, res);
+    })
+    app.get('/loggedUser', function(req, res) {
+        user.loggedUser(req, res);
     })
 };

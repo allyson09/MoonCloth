@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="row">
-        <p id="minititle">Daylight</p>
+        <p id="minititle" (click)="filtering()">Daylight</p>
     </div>
     <div class="row">
         <div id="filter" class="col-md-3">
@@ -36,65 +36,93 @@
                 <h3>Category</h3>
                 <div class="row">
                     <img src="/assets/images/arrow.svg" alt="bloop" class="col arrows">
-                    <a href="" class="col filterlink">School</a>
+                    <span class="col filterlink" [ngClass]="{selectedCategory: categoryCheck.school, unselectedCategory: !categoryCheck.school}"
+                    (click)="categoryFilter('school')">School</span>
                 </div>
                 <div class="row">
                     <img src="/assets/images/arrow.svg" alt="bloop" class="col arrows">
-                    <a href="" class="col filterlink">Casual</a>
+                    <span href="" class="col filterlink" 
+                    (click)="categoryFilter('casual')">Casual</span>
                 </div>
                 <div class="row">
                     <img src="/assets/images/arrow.svg" alt="bloop" class="col arrows">
-                    <a href="" class="col filterlink">Dresses</a>
+                    <span href="" class="col filterlink" 
+                    (click)="categoryFilter('dresses')">Dresses</span>
                 </div>
             </div>
             <div>
                 <h3>Color</h3>
                 <div id="colors">
-                    <img src="/assets/images/pinkcirc.png" id="pink" class="color">
-                    <img src="/assets/images/yellowcirc.png" id="yellow" class="color">
-                    <img src="/assets/images/bluecirc.png" id="blue" class="color">
-                    <img src="/assets/images/greencirc.png" id="green" class="color">
-                    <img src="/assets/images/purplecirc.svg" id="purple" class="color">
-                    <img src="/assets/images/redcirc.png" id="red" class="color">
+                    <img src="/assets/images/pinkcirc.png" id="pink" class="color" (click)="colorFilter('pink')">
+                    <img src="/assets/images/yellowcirc.png" id="yellow" class="color" (click)="colorFilter('yellow')">
+                    <img src="/assets/images/bluecirc.png" id="blue" class="color" (click)="colorFilter('blue')">
+                    <img src="/assets/images/greencirc.png" id="green" class="color" (click)="colorFilter('green')">
+                    <img src="/assets/images/purplecirc.svg" id="purple" class="color" (click)="colorFilter('purple')">
+                    <img src="/assets/images/redcirc.png" id="red" class="color" (click)="colorFilter('red')">
                 </div>
             </div>
             <div>
                 <h3>Size</h3>
-                <p>sizes...</p>
+                <span class="size" (click)="sizeFilter('XL')">XL</span>
+                <span class="size" (click)="sizeFilter('L')">L</span>
+                <span class="size" (click)="sizeFilter('M')">M</span>
+                <span class="size" (click)="sizeFilter('S')">S</span>
+                <span class="size" (click)="sizeFilter('XS')">XS</span>
             </div>
             <div>
                 <h3>Price</h3>
-                <p></p>
+                <ng5-slider [(value)]="startRange" [(highValue)]="endRange" [options]="options" (userChange)="rangeFilter()"></ng5-slider>
             </div>
         </div>
         <div id="main" class="col-md-9">
-            <h2 class="row">Daylight</h2>
+            <h2>Daylight</h2>
             <div id="itemNav" class="row">
-                <select class="col-md-2">
-                    <option>Cheapest</option>
+                <select class="col-md-2" (change)="orderFilter($event)">
                     <option>Newest</option>
-                    <option>Bloops</option>
+                    <option>Cheapest</option>
+                    <option>Popular</option>
                 </select>
-                <select class="col-md-2">
+                <select class="col-md-2" (change)="amountFilter($event)">
+                    <option>Show 25</option>
+                    <option>Show 50</option>
                     <option>Show 100</option>
-                    <option>Show All</option>
-                    <option>Show 20</option>
                 </select>
                 <div class="col-md-6 align-self-end">
-                    <span>1-100 of 648 Results</span>
-                    <span><< 1 2 3 4 5 >></span>
+                    <span>{{(outfits.length * currentPageIndex) + 1}} - {{outfits.length * (currentPageIndex + 1)}} of {{totalOutfitObjects.length}} Results</span>
+                    <span (click)="changePageIndex('previous')"><</span>
+                        <span *ngFor="let page of allPages; let i = index">
+                            <span class="pageNumber" (click)="changePageIndex(i)" [ngClass]="{boldPageNumber: currentPageIndex == i}">
+                                {{i + 1}}
+                            </span>
+                        </span>
+                    <span (click)="changePageIndex('next')">></span>
                 </div>
             </div>
-            <div id="itemwrap" *ngFor="let outfit of outfits">
-                <div class="item col">
-                    <img class="itemPics row" src="{{outfit.image}}" alt="bloop">
-                    <div class="row">
-                        <span class="col">{{outfit.title}}</span>
-                        <span class="col align-self-end">heart</span>
-                    </div>
-                    <p class="row">
-                        {{outfit.price}}
-                    </p>
+            <div id="itemContainer">
+                <div>
+                    <span *ngIf="loggedList.length > 0">
+                        <div id="itemwrap" *ngFor="let outfit of outfits">
+                            <span *ngFor="let love of loveList">
+                                <!-- <p (load)="loveCounting()">{{loveCounter}}</p> -->
+                                <div class="item">
+                                    <img class="itemPics" src="{{outfit.image}}" alt="bloop">
+                                    <p>{{outfit.title}}</p>
+                                    <span (click)="heartClicked(outfit)" [ngClass]="{lovedItemHearts: outfit._id === love}" class="itemHearts">+</span>
+                                    <p>{{outfit.price}}</p>
+                                </div>
+                            </span>
+                        </div>
+                    </span>
+                    <span *ngIf="loggedList.length === 0">
+                        <div id="itemwrap" *ngFor="let outfit of outfits">
+                            <div class="item">
+                                <img class="itemPics" src="{{outfit.image}}" alt="bloop">
+                                <p>{{outfit.title}}</p>
+                                <span (click)="heartClicked(outfit)" class="itemHearts">+</span>
+                                <p>{{outfit.price}}</p>
+                            </div>
+                        </div>
+                    </span>
                 </div>
             </div>
         </div>

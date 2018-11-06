@@ -1,6 +1,7 @@
 #Carousel{
     width: 100%;
     margin-top: 20px;
+    z-index: -1;
 }
 #minititle{
     font-style: italic;
@@ -40,9 +41,54 @@ select{
 .color{
     width: 10%;
 }
+.item {
+    position: relative;
+}
+.itemHearts {
+    color: pink;
+    position: absolute;
+    top: 0;
+    right: 13px;
+    font-size: 34px;
+}
+.itemHearts:hover {
+    font-weight: bolder;
+    cursor: pointer;
+}
+.lovedItemHearts {
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 13px;
+    font-size: 34px;
+}
+.lovedItemHearts:hover {
+    font-weight: bolder;
+    cursor: pointer;
+}
 #itemwrap{
-    margin-top: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
 }
 .itemPics{
    height: 250px;
+}
+
+#itemNav {
+    margin-left: 0px;
+}
+.selectedCategory {
+    color: pink;
+}
+.unselectedCategory {
+    color: black;
+}
+.pageNumber {
+    color: gray;
+}
+.boldPageNumber {
+    color: black;
+    font-weight: bold;
 }

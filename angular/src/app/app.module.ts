@@ -6,6 +6,7 @@ import { DataService } from './data.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { Ng5SliderModule } from 'ng5-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -58,7 +59,8 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    NgbModule
+    NgbModule,
+    Ng5SliderModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

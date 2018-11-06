@@ -9,6 +9,7 @@
     background-color: white;
     width: 1000px;
     margin-top: 70px;
+    margin-bottom: 70px;
 }
 #copy{
     background-color: white;
@@ -76,4 +77,8 @@ input{
 }
 #offers{
     margin-top: 50px;
+}
+.centering {
+    display: flex;
+    justify-content: center;
 }

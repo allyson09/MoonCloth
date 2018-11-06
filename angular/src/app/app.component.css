@@ -106,6 +106,7 @@ a:hover{
     -webkit-transition: opacity 1s ease-in-out;
 }
 .sub-menu-wrap{
+    z-index: 3;
     align-items: center;
 }
 .sub-menu{
@@ -223,4 +224,8 @@ input{
 }
 .mctext{
     padding-left: 5px;
+}
+.centering {
+    display: flex;
+    justify-content: center;
 }
