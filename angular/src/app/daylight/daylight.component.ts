@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Options } from 'ng5-slider';
+import { IfObservable } from 'rxjs/observable/IfObservable';
 
 @Directive({
   selector: '[onCreate]'
@@ -24,7 +25,7 @@ export class OnCreate implements OnInit {
 export class DaylightComponent implements OnInit {
 
   constructor(private _dataService: DataService, private _route: ActivatedRoute, private _router: Router) { 
-    console.log('in constructor')
+    this.loggedInCheck();
     this.getDaylight();
     this.getlikedOutfits();
     // this.sessionId = this._dataService.sessionId;
@@ -75,9 +76,9 @@ export class DaylightComponent implements OnInit {
   amountCheck = "Show 25";
   allPages = [];
   currentPageIndex = 0;
-  loveList = [];
-  loveCounter;
+  loveList = "";
   loggedList = [];
+  regPrompt = true;
 
   ngOnInit() {
     // this.sessionId = this._dataService.loggedUser()
@@ -90,32 +91,36 @@ export class DaylightComponent implements OnInit {
     //   }
     // })
   }
-  loveCounting() {
-    console.log('AYYYYYYYE')
+
+  loggedInCheck() {
+    if (this._dataService.loggedList.length > 0) {
+      this.regPrompt = false;
+    }
   }
+
   getlikedOutfits() {
     this._dataService.getLikedOutfits()
     .then(data => {
-      this.loveList = data.loveList;
-      this.loveCounter = this.loveList.length;
-      console.log('liked outfits', this.loveList)
+      this.loveList = data.loveList.join();
     })
-    console.log('outfit still exists', this.outfits)
+  }
+
+  checkIfLiked(outfit) {
+    if(this.loveList.includes(outfit)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   getDaylight() {
-    console.log('IN GET DAYLIGHT')
     this._dataService.getDaylight()
     .then (data => {
-      console.log('DATA RETURNED', data.outfitRes)
       this.totalOutfitObjects = data.outfitRes.reverse();
       this.allPages = this.makePages(this.totalOutfitObjects);
       this.outfits = this.allPages[this.currentPageIndex];
-      console.log('outfits', this.outfits)
-      console.log('TOTAL', this.outfits)
     });
     this.loggedList = this._dataService.getloggedList();
-    console.log('LOGGED LIST', this.loggedList)
   }
 
   makePages(list) {
@@ -336,12 +341,12 @@ export class DaylightComponent implements OnInit {
   heartClicked(outfit) {
     console.log('outfit sent', outfit)
     this._dataService.likeOutfit(outfit)
-    .then (data => {
-      if(data.err == "notLogged") {
-        console.log('user not logged in')
-        //create modal and have it pop up
-      }
-    })
     this.getlikedOutfits();
+  }
+  regRedirect() {
+    this._router.navigate(['/join'])
+  }
+  selectItem(outfit) {
+    this._dataService.selectedItem.push(outfit);
   }
 }

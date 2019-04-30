@@ -19,6 +19,7 @@ import { ShoesComponent } from './Accessories/shoes/shoes.component';
 import { WeaponsComponent } from './Accessories/weapons/weapons.component';
 import { CosplayComponent } from './cosplay/cosplay.component';
 import { AdminComponent } from './admin/admin.component';
+import { ItemDetailsComponent } from './item-details/item-details.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -30,6 +31,8 @@ const routes: Routes = [
   {path: 'accessories', component: AccessoriesComponent},
   {path: 'moon-gallery', component: CosplayComponent},
   {path: 'admin', component: AdminComponent},
+  {path: 'outfit/:id', component: ItemDetailsComponent},
+  {path: 'accesserie/:id', component: ItemDetailsComponent},
   {
     path: 'daylight',
     component: DaylightComponent,

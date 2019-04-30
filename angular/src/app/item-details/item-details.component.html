@@ -1,0 +1,47 @@
+<main>
+    <p>{{ selectedItem.subCategory }} > {{ selectedItem.title }}</p>
+    <section id="itemArea">
+      <section id="imageArea">
+        <section id="imageOptions">
+          <img class="imageOption" src="{{selectedItem.image}}">
+          <img class="imageOption" src="{{selectedItem.image}}">
+          <img class="imageOption" src="{{selectedItem.image}}">
+        </section>
+        <img id="currentImage" src="{{selectedItem.image}}">
+      </section>
+      <section id="itemOptionss">
+        <h2>{{selectedItem.title}}<span id="heart" class="itemHearts">+</span></h2>
+        <h2>${{selectedItem.price}}</h2>
+        <section id="sizes">
+          <span class="size">XS</span>
+          <span class="size">S</span>
+          <span class="size">M</span>
+          <span class="size">L</span>
+          <span class="size">XL</span>
+        </section>
+        <button>Add to Bag</button>
+        <hr>
+        <section id="infoArea">
+          <section id="infoTabs">
+            <span class="infoTabs">Description</span>
+            <span class="infoTabs">Details</span>
+            <span class="infoTabs">Size Chart</span>
+          </section>
+          <section id="itemDescription">
+            <p>Item No. {{selectedItem._id}}</p>
+            <p>{{selectedItem.description}}</p>
+          </section>
+          <section id="itemDetails"></section>
+          <section id="itemSizeChart"></section>
+        </section>
+      </section>
+    </section>
+    <p>Similar Items</p>
+    <hr>
+    <!-- <section id="similarItemArea" *ngFor="let item of similarItems">
+      <section *ngIf="selectedItem.subCategory == item.subCategory" class="similarItems">
+        <img src="{{item.image}}">
+        <p>{{item.title}}</p>
+      </section>
+    </section> -->
+</main>

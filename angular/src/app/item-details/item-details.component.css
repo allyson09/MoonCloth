@@ -1,0 +1,76 @@
+main {
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-top: 5%;
+}
+#itemArea {
+    display: flex;
+    justify-content: space-between;
+}
+#imageArea {
+    display: flex;
+}
+#imageOptions {
+    display: block;
+}
+.imageOption {
+    height: 9em;
+    margin: .5em;
+    display: block;
+}
+#currentImage {
+    margin-top: .5em;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+}
+.itemHearts {
+    color: pink;
+    font-size: 34px;
+}
+.itemHearts:hover {
+    font-weight: bolder;
+    cursor: pointer;
+}
+.lovedItemHearts {
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 13px;
+    font-size: 34px;
+}
+.lovedItemHearts:hover {
+    font-weight: bolder;
+    cursor: pointer;
+}
+#sizes {
+    margin-top: 35%;
+}
+.size {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+button {
+    margin-top: 10%;
+    height: 45px;
+    width: 230px;
+    background-color: #c9ebde;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #035256;
+}
+#infoTabs {
+    display: flex;
+    justify-content: center;
+}
+.infoTabs {
+    margin-left: 1em;
+    margin-right: 1em;
+    font-weight: bold;
+}
+hr {
+    width: 25em;
+}

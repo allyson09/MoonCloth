@@ -75,7 +75,9 @@ select{
 .itemPics{
    height: 250px;
 }
-
+.itemPics:hover{
+    cursor: pointer;
+ }
 #itemNav {
     margin-left: 0px;
 }

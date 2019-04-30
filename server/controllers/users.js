@@ -45,14 +45,14 @@ module.exports = {
     },
     admincheck: function (req, res) {
         if (req.session.admin === 'yay') {
-            res.json({'admin': req.session.admin})
+            res.json({'admin': req.session.admin});
         } else {
-            res.json({'admin': req.session.admin})
+            res.json({'admin': req.session.admin});
         }
     },
     likeOutfit: function (req, res) {
         if(req.session.user == undefined) {
-            res.json({'err': 'notLogged'})
+            res.json({'err': 'notLogged'});
         }
         User.findOne({_id: req.session.user})
         .then((user) => {
@@ -63,7 +63,7 @@ module.exports = {
                 loveList.push(req.body)
                 User.update({_id: req.session.user}, {$set: {loves_: loveList}}, function(err){
                     if (err){
-                        res.json({'err': 'error updating User'})
+                        res.json({'err': 'error updating User'});
                     }     
                 });
             }
@@ -74,10 +74,11 @@ module.exports = {
         User.findOne({_id: req.session.user})
         .then((user) => {
             if(!user) {
+                console.log('error finding logged user in get liked outfits');
             }
             if(user) {
-                console.log('loved list in user', user.loves_)
-                res.json({'loveList': user.loves_})
+                console.log('loved list in user', user.loves_);
+                res.json({'loveList': user.loves_});
             }
         });
     }

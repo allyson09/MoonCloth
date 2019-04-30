@@ -99,32 +99,36 @@
                 </div>
             </div>
             <div id="itemContainer">
-                <div>
-                    <span *ngIf="loggedList.length > 0">
-                        <div id="itemwrap" *ngFor="let outfit of outfits">
-                            <span *ngFor="let love of loveList">
-                                <!-- <p (load)="loveCounting()">{{loveCounter}}</p> -->
-                                <div class="item">
-                                    <img class="itemPics" src="{{outfit.image}}" alt="bloop">
-                                    <p>{{outfit.title}}</p>
-                                    <span (click)="heartClicked(outfit)" [ngClass]="{lovedItemHearts: outfit._id === love}" class="itemHearts">+</span>
-                                    <p>{{outfit.price}}</p>
-                                </div>
-                            </span>
-                        </div>
-                    </span>
-                    <span *ngIf="loggedList.length === 0">
-                        <div id="itemwrap" *ngFor="let outfit of outfits">
-                            <div class="item">
-                                <img class="itemPics" src="{{outfit.image}}" alt="bloop">
-                                <p>{{outfit.title}}</p>
-                                <span (click)="heartClicked(outfit)" class="itemHearts">+</span>
-                                <p>{{outfit.price}}</p>
-                            </div>
-                        </div>
-                    </span>
+                <div id="itemwrap" *ngFor="let outfit of outfits">
+                    <div class="item">
+                        <img [routerLink]="['/outfit', outfit.title]" (click)="selectItem(outfit)" class="itemPics" src="{{outfit.image}}" alt="bloop">
+                        <p>{{outfit.title}}</p>
+                        <span (click)="heartClicked(outfit)" data-toggle="modal" data-target="#exampleModalCenter" [ngClass]="checkIfLiked(outfit._id) ? 'lovedItemHearts' : 'itemHearts'">+</span>
+                        <p>{{outfit.price}}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+  
+
+      <!-- Modal -->
+      <div *ngIf="regPrompt" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" (click)="regRedirect()" data-dismiss="modal" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>

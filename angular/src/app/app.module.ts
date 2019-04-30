@@ -29,6 +29,7 @@ import { WeaponsComponent } from './Accessories/weapons/weapons.component';
 import { JewelryComponent } from './Accessories/jewelry/jewelry.component';
 import { ShoesComponent } from './Accessories/shoes/shoes.component';
 import { AdminComponent } from './admin/admin.component';
+import { ItemDetailsComponent } from './item-details/item-details.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { AdminComponent } from './admin/admin.component';
     WeaponsComponent,
     JewelryComponent,
     ShoesComponent,
-    AdminComponent
+    AdminComponent,
+    ItemDetailsComponent
   ],
   imports: [
     BrowserModule,
