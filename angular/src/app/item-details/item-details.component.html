@@ -36,12 +36,18 @@
         </section>
       </section>
     </section>
-    <p>Similar Items</p>
-    <hr>
-    <!-- <section id="similarItemArea" *ngFor="let item of similarItems">
-      <section *ngIf="selectedItem.subCategory == item.subCategory" class="similarItems">
-        <img src="{{item.image}}">
-        <p>{{item.title}}</p>
+    <section id="similarItemsArea">
+      <p>Similar Items</p>
+      <hr id="footerhr">
+      <section id="carouselArea">
+        <span class="arrow" (click)="changeCarouselIndex('previous')"><</span>
+        <!-- <section id="similarItemWrap" *ngFor="let item of carouselPage"> -->
+          <section class="similarItem" *ngFor="let item of carouselPage">
+            <img class="similarImage" src="{{item.image}}">
+            <p>{{item.title}}</p>
+          </section>
+        <!-- </section> -->
+        <span class="arrow" (click)="changeCarouselIndex('next')">></span>
       </section>
-    </section> -->
+    </section>
 </main>

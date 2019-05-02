@@ -74,3 +74,29 @@ button {
 hr {
     width: 25em;
 }
+#footerhr {
+    width: auto;
+}
+
+#similarItemsArea {
+    margin-top: 7em;
+    margin-left: 12%;
+    margin-right: 12%;
+}
+#carouselArea {
+    display: flex;
+    justify-content: center;
+}
+.similarImage {
+    height: 18em;
+    margin: .3em;
+}
+.arrow {
+    color: #035256a3;
+    padding-top: 10%;
+    font-size: 4em;
+}
+.arrow:hover {
+    cursor: pointer;
+    color: #035256cc;
+}
