@@ -1,3 +1,56 @@
-<p>
-  loves works!
-</p>
+<main id="wrapper">
+  <header>
+    <section id="freeShipping">
+      <p id="freeShippingText" class="teal bold center">FREE SHIPPING <span class="pink">ON $75+ ORDERS </span><span class="orange">& FREE RETURNS</span></p>
+    </section>
+    <p id="currentPage" class="smallText gray">My Account > My Loved Items</p>
+  </header>
+  <section id="mainArea">
+    <section id="sideBar">
+      <section id="sideBarLinks">
+        <p class="smallText bold topSpace">My Account</p>
+        <p class="smallText gray">Dashboard</p>
+        <p class="smallText gray">Account Settings</p>
+        <p class="smallText gray">Addresses</p>
+        <p class="smallText gray bottomSpace">Payment Settings</p>
+        <p class="smallText bold topSpace">Order Information</p>
+        <p class="smallText gray">Order History</p>
+        <p class="smallText gray bottomSpace">Review Your Purchases</p>
+        <p class="smallText bold topSpace">Wishlist</p>
+        <p class="smallText gray bottomSpace">Modify Wishlist</p>
+        <p class="smallText bold topSpace">Shop Confidently</p>
+        <p class="smallText gray">Privacy & Security</p>
+      </section>
+      <section id="sideBarAds">
+        <section id="shareLove"></section>
+        <section id="modStylists"></section>
+      </section>
+    </section>
+    <section id="myLovedItems">
+      <p id="lovedItemsTitle">My Loved Items</p>
+      <section *ngIf="loveList.length == 0" id="pinkBox">
+        <p class="smallText gray" id="privacyPolicy">Privacy Policy</p>
+        <section id="noLoves">
+          <p class="smallText gray">You haven't loved any items yet.</p>
+          <section id="grayBox"></section>
+          <img src="" alt="heartImage">
+          <img src="" alt="cursorImage">
+          <p class="bold clickHeart">Click on the heart icon to add items to</p>
+          <p class="bold clickHeart noMargin">your love list.</p>
+          <button>Start Adding Loves</button>
+        </section>
+      </section>
+      <section *ngIf="loveList.length > 0">
+        <section id="loveListArea">
+          <p>Share Your List:<span class="resultAmount">{{loveList.length}} Results</span></p>
+          <section *ngFor="let item of loveList">
+            <img [routerLink]="['/outfit', item.title]" (click)="selectItem(item)" class="itemPics" src="{{item.image}}" alt="bloop">
+            <p>{{item.title}}<span class="lovedItemHearts" (click)="heartClicked(item)">+</span></p>
+            <p>${{item.price}}</p>
+          </section>
+          <p class="resultAmount">{{loveList.length}} Results</p>
+        </section>
+      </section>
+    </section>
+  </section>
+</main>

@@ -68,18 +68,5 @@ module.exports = {
                 });
             }
         });
-    },
-    getLikedOutfits: function (req, res) {
-        console.log('in get liked outfits')
-        User.findOne({_id: req.session.user})
-        .then((user) => {
-            if(!user) {
-                console.log('error finding logged user in get liked outfits');
-            }
-            if(user) {
-                console.log('loved list in user', user.loves_);
-                res.json({'loveList': user.loves_});
-            }
-        });
     }
 };

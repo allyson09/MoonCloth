@@ -51,6 +51,7 @@ export class DataService {
     .map(response => response.json()).toPromise();
   }
   getLikedOutfits() {
+    console.log('IN SERVICE GET LIKED OUTFITS')
     return this.http.get('/getLikedOutfits')
     .map(response => response.json()).toPromise();
   }
