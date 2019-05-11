@@ -1,6 +1,6 @@
-node_modules
-package-lock.json
-package.json
-angular/node_modules
-angular/package.json
-angular/package-lock.json
+/node_modules
+/package-lock.json
+/package.json
+/angular/node_modules
+/angular/package.json
+/angular/package-lock.json

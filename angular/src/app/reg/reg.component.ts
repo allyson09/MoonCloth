@@ -20,6 +20,7 @@ export class RegComponent implements OnInit {
   };
   regemailerr;
   regpasserr;
+  errorMsg;
 
   constructor(private _dataService: DataService, private _route: ActivatedRoute, private router: Router) { }
 
@@ -27,6 +28,9 @@ export class RegComponent implements OnInit {
   }
 
   register() {
+    if (this.reg.firstName == '' && this.reg.lastName == '' && this.reg.email == '' && this.reg.cemail == '' && this.reg.password == '' && this.reg.cpassword == '' && this.reg.admin == '') {
+      this.errorMsg = 'Please enter registration info.';
+    }
     if (this.reg.email !== this.reg.cemail) {
       this.regemailerr = 'Your emails must match!';
     }

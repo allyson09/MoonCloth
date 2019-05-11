@@ -100,9 +100,13 @@ export class DaylightComponent implements OnInit {
 
   getlikedOutfits() {
     this._dataService.getLikedOutfits()
-    .then(data => {
-      this.loveList = data.loveList.join();
-    })
+      .then(data => {
+        let outfitIds = "";
+        for (let outfit of data.loveList) {
+          outfitIds += outfit._id;
+        }
+        this.loveList = outfitIds;
+      });
   }
 
   checkIfLiked(outfit) {

@@ -34,7 +34,7 @@ module.exports = {
                 req.session.admin = user.admin;
                 res.json({'loggedId': req.session.user, 'loggedName': req.session.name, 'loggedEmail': req.session.email, 'admin': req.session.admin});
             }
-        })
+        });
     },
     loggedUser: function(req, res){
         console.log('IN CONTROLLER TO FIND LOGGED USER');
