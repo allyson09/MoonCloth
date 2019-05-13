@@ -20,7 +20,7 @@
       </div>
       <div *ngIf="loggedList.length > 0" id="user-side" class="col-md-4 header">
         <p>
-          <a (click)="logout()">Logout</a> | 
+          <a id="logout" (click)="logout()">Logout</a> | 
           <a [routerLink]="['loves']">Loves</a>
         </p>
       </div>
@@ -196,11 +196,11 @@
 <router-outlet></router-outlet>
 
 <div id="copy" class="container">
-  <div class="row justify-content-center" id="offers">
+  <!-- <div class="row justify-content-center" id="offers">
     <div col="col-md-12">
       <input class="col-md" id="offersubmit" type="submit" value="SUBMIT">
     </div>
-  </div>
+  </div> -->
   <div class="row">
     <div class="centering">
       <div class="links col-md-4">

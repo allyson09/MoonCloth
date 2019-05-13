@@ -35,3 +35,14 @@ h1{
     margin-top: 0px;
     padding-top: 10px;
 }
+.buttons {
+    height: 45px;
+    width: 230px;
+    background-color: #c9ebde;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #035256;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}

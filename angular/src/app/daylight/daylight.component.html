@@ -36,38 +36,38 @@
                 <h3>Category</h3>
                 <div class="row">
                     <img src="/assets/images/arrow.svg" alt="bloop" class="col arrows">
-                    <span class="col filterlink" [ngClass]="{selectedCategory: categoryCheck.school, unselectedCategory: !categoryCheck.school}"
+                    <span class="col filterlink cursor hoverLight" [ngClass]="{selectedText: categoryCheck.school, unselectedText: !categoryCheck.school}"
                     (click)="categoryFilter('school')">School</span>
                 </div>
                 <div class="row">
                     <img src="/assets/images/arrow.svg" alt="bloop" class="col arrows">
-                    <span href="" class="col filterlink" 
+                    <span href="" class="col filterlink cursor hoverLight" [ngClass]="{selectedText: categoryCheck.casual, unselectedText: !categoryCheck.casual}"
                     (click)="categoryFilter('casual')">Casual</span>
                 </div>
                 <div class="row">
                     <img src="/assets/images/arrow.svg" alt="bloop" class="col arrows">
-                    <span href="" class="col filterlink" 
+                    <span href="" class="col filterlink cursor hoverLight" [ngClass]="{selectedText: categoryCheck.dresses, unselectedText: !categoryCheck.dresses}"
                     (click)="categoryFilter('dresses')">Dresses</span>
                 </div>
             </div>
             <div>
                 <h3>Color</h3>
                 <div id="colors">
-                    <img src="/assets/images/pinkcirc.png" id="pink" class="color" (click)="colorFilter('pink')">
-                    <img src="/assets/images/yellowcirc.png" id="yellow" class="color" (click)="colorFilter('yellow')">
-                    <img src="/assets/images/bluecirc.png" id="blue" class="color" (click)="colorFilter('blue')">
-                    <img src="/assets/images/greencirc.png" id="green" class="color" (click)="colorFilter('green')">
-                    <img src="/assets/images/purplecirc.svg" id="purple" class="color" (click)="colorFilter('purple')">
-                    <img src="/assets/images/redcirc.png" id="red" class="color" (click)="colorFilter('red')">
+                    <img src="/assets/images/pinkcirc.png" id="pink" [ngClass]="{selectedColor: colorCheck.pink}" class="color cursor" (click)="colorFilter('pink')">
+                    <img src="/assets/images/yellowcirc.png" id="yellow" [ngClass]="{selectedColor: colorCheck.yellow}" class="color cursor" (click)="colorFilter('yellow')">
+                    <img src="/assets/images/bluecirc.png" id="blue" [ngClass]="{selectedColor: colorCheck.blue}" class="color cursor" (click)="colorFilter('blue')">
+                    <img src="/assets/images/greencirc.png" id="green" [ngClass]="{selectedColor: colorCheck.green}" class="color cursor" (click)="colorFilter('green')">
+                    <img src="/assets/images/purplecirc.svg" id="purple" [ngClass]="{selectedColor: colorCheck.purple}" class="color cursor" (click)="colorFilter('purple')">
+                    <img src="/assets/images/redcirc.png" id="red" [ngClass]="{selectedColor: colorCheck.red}" class="color cursor" (click)="colorFilter('red')">
                 </div>
             </div>
             <div>
                 <h3>Size</h3>
-                <span class="size" (click)="sizeFilter('XL')">XL</span>
-                <span class="size" (click)="sizeFilter('L')">L</span>
-                <span class="size" (click)="sizeFilter('M')">M</span>
-                <span class="size" (click)="sizeFilter('S')">S</span>
-                <span class="size" (click)="sizeFilter('XS')">XS</span>
+                <span class="size cursor hoverLight" [ngClass]="{selectedText: sizeCheck.XL, unselectedText: !sizeCheck.XL}" (click)="sizeFilter('XL')">XL</span>
+                <span class="size cursor hoverLight" [ngClass]="{selectedText: sizeCheck.L, unselectedText: !sizeCheck.L}" (click)="sizeFilter('L')">L</span>
+                <span class="size cursor hoverLight" [ngClass]="{selectedText: sizeCheck.M, unselectedText: !sizeCheck.M}" (click)="sizeFilter('M')">M</span>
+                <span class="size cursor hoverLight" [ngClass]="{selectedText: sizeCheck.S, unselectedText: !sizeCheck.S}" (click)="sizeFilter('S')">S</span>
+                <span class="size cursor hoverLight" [ngClass]="{selectedText: sizeCheck.XS, unselectedText: !sizeCheck.XS}" (click)="sizeFilter('XS')">XS</span>
             </div>
             <div>
                 <h3>Price</h3>
@@ -89,13 +89,13 @@
                 </select>
                 <div class="col-md-6 align-self-end">
                     <span>{{(outfits.length * currentPageIndex) + 1}} - {{outfits.length * (currentPageIndex + 1)}} of {{totalOutfitObjects.length}} Results</span>
-                    <span (click)="changePageIndex('previous')"><</span>
+                    <span class="cursor" (click)="changePageIndex('previous')"><</span>
                         <span *ngFor="let page of allPages; let i = index">
-                            <span class="pageNumber" (click)="changePageIndex(i)" [ngClass]="{boldPageNumber: currentPageIndex == i}">
+                            <span class="cursor pageNumber hoverLight" (click)="changePageIndex(i)" [ngClass]="{boldPageNumber: currentPageIndex == i}">
                                 {{i + 1}}
                             </span>
                         </span>
-                    <span (click)="changePageIndex('next')">></span>
+                    <span class="cursor" (click)="changePageIndex('next')">></span>
                 </div>
             </div>
             <div id="itemContainer">
@@ -115,19 +115,15 @@
       <!-- Modal -->
       <div *ngIf="regPrompt" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+          <div id="modalMain" class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">Oh! You're not Logged in!</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" (click)="regRedirect()" data-dismiss="modal" class="btn btn-primary">Save changes</button>
+              <p id="modalText">To like an item please <a class="modalLinks" (click)="reRoute('login')" data-dismiss="modal">login</a> or <a class="modalLinks" (click)="reRoute('register')" data-dismiss="modal">register</a> so we can become better acquainted.</p>
             </div>
           </div>
         </div>

@@ -263,14 +263,17 @@ export class DaylightComponent implements OnInit {
     
     this.allPages = this.makePages(filteredOutfits);
     this.outfits = this.allPages[this.currentPageIndex];
+    console.log('AFTER FILTERING', this.categoryCheck)
   }
 
   categoryFilter(category) {
     if(!this.categoryCheck[category]) {
+      console.log('WAS NOT SELECTED. SELECTING...')
       this.categoryCheck[category] = true;
       this.filterStatuses.category = true;
       this.filtering();
     } else {
+      console.log('WAS SELECTED. SELECTING ')
       this.categoryCheck[category] = false;
       for(let c in this.categoryCheck) {
         if(c) {
@@ -347,8 +350,12 @@ export class DaylightComponent implements OnInit {
     this._dataService.likeOutfit(outfit)
     this.getlikedOutfits();
   }
-  regRedirect() {
-    this._router.navigate(['/join'])
+  reRoute(page) {
+    if (page == 'login') {
+      this._router.navigate(['/login'])
+    } else {
+      this._router.navigate(['/join'])
+    }
   }
   selectItem(outfit) {
     this._dataService.selectedItem.push(outfit);

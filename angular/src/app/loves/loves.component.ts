@@ -43,4 +43,7 @@ export class LovesComponent implements OnInit {
   selectItem(outfit) {
     this._dataService.selectedItem.push(outfit);
   }
+  reDirect() {
+    this._router.navigate(['/login'])
+  }
 }

@@ -39,7 +39,13 @@ select{
     margin-right: 10px;
 }
 .color{
-    width: 10%;
+    margin: .2em;
+    padding: .2em;
+    width: 15%;
+}
+.selectedColor {
+    border: .1em solid gray;
+    border-radius: 2em;
 }
 .item {
     position: relative;
@@ -81,16 +87,45 @@ select{
 #itemNav {
     margin-left: 0px;
 }
-.selectedCategory {
-    color: pink;
-}
-.unselectedCategory {
+.selectedText {
     color: black;
+    margin: .3em;
+    font-weight: bold;
+}
+.unselectedText {
+    color: #656565;
+    margin: .3em;
 }
 .pageNumber {
     color: gray;
 }
+.hoverLight:hover {
+    color: #c1c1c1;
+}
 .boldPageNumber {
     color: black;
     font-weight: bold;
+}
+#modalMain {
+    border-radius: 0;
+    border: .1em solid #464646;
+    box-shadow: none;
+    text-align: center;
+    color: #272727;
+}
+#exampleModalLongTitle {
+    font-size: 2em;
+}
+#modalText {
+    margin: 1em;
+}
+.modalLinks {
+    color: #d07d8c;
+    text-decoration: none;
+}
+.modalLinks:hover {
+    cursor: pointer;
+}
+.cursor {
+    cursor: pointer;
 }

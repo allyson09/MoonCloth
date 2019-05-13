@@ -33,23 +33,23 @@
         <section id="noLoves">
           <p class="smallText gray">You haven't loved any items yet.</p>
           <section id="grayBox"></section>
-          <img src="" alt="heartImage">
-          <img src="" alt="cursorImage">
+          <!-- <img src="" alt="heartImage">
+          <img src="" alt="cursorImage"> -->
           <p class="bold clickHeart">Click on the heart icon to add items to</p>
           <p class="bold clickHeart noMargin">your love list.</p>
-          <button>Start Adding Loves</button>
+          <button id="login" (click)="reDirect()">Start Adding Loves</button>
         </section>
       </section>
       <section *ngIf="loveList.length > 0">
+        <p>Share Your List: <span class="resultAmount">{{loveList.length}} Results</span></p>
         <section id="loveListArea">
-          <p>Share Your List:<span class="resultAmount">{{loveList.length}} Results</span></p>
           <section *ngFor="let item of loveList">
             <img [routerLink]="['/outfit', item.title]" (click)="selectItem(item)" class="itemPics" src="{{item.image}}" alt="bloop">
             <p>{{item.title}}<span class="lovedItemHearts" (click)="heartClicked(item)">+</span></p>
             <p>${{item.price}}</p>
           </section>
-          <p class="resultAmount">{{loveList.length}} Results</p>
         </section>
+        <p class="resultAmount">{{loveList.length}} Results</p>
       </section>
     </section>
   </section>

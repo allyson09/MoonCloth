@@ -18,6 +18,9 @@ main {
     margin: .5em;
     display: block;
 }
+#itemOptions {
+    margin-left: 3em;
+}
 #currentImage {
     margin-top: .5em;
 }

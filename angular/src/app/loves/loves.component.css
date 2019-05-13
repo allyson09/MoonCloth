@@ -119,4 +119,11 @@ button{
 }
 .itemPics{
     height: 250px;
+    margin: 1em;
  }
+#login:hover {
+    cursor: pointer;
+}
+#loveListArea {
+    display: flex;
+}
