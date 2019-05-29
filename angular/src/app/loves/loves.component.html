@@ -3,10 +3,10 @@
     <section id="freeShipping">
       <p id="freeShippingText" class="teal bold center">FREE SHIPPING <span class="pink">ON $75+ ORDERS </span><span class="orange">& FREE RETURNS</span></p>
     </section>
-    <p id="currentPage" class="smallText gray">My Account > My Loved Items</p>
+    <p id="greeting" class="smallText gray">Hello, whatever your name is!</p>
   </header>
   <section id="mainArea">
-    <section id="sideBar">
+    <section class="subSection" id="sideBar">
       <section id="sideBarLinks">
         <p class="smallText bold topSpace">My Account</p>
         <p class="smallText gray">Dashboard</p>
@@ -26,7 +26,7 @@
         <section id="modStylists"></section>
       </section>
     </section>
-    <section id="myLovedItems">
+    <section class="subSection" id="myLovedItems">
       <p id="lovedItemsTitle">My Loved Items</p>
       <section *ngIf="loveList.length == 0" id="pinkBox">
         <p class="smallText gray" id="privacyPolicy">Privacy Policy</p>
@@ -45,7 +45,7 @@
         <section id="loveListArea">
           <section *ngFor="let item of loveList">
             <img [routerLink]="['/outfit', item.title]" (click)="selectItem(item)" class="itemPics" src="{{item.image}}" alt="bloop">
-            <p>{{item.title}}<span class="lovedItemHearts" (click)="heartClicked(item)">+</span></p>
+            <p>{{item.title}}</p>
             <p>${{item.price}}</p>
           </section>
         </section>

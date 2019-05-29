@@ -4,6 +4,7 @@ var bcrypt = require('bcrypt-nodejs');
 
 module.exports = {
     register: function (req, res) {
+        console.log('registering', req.body);
         var user = new User(req.body);
         user.save(function(err, userData){
             if(err){
@@ -59,9 +60,31 @@ module.exports = {
             if(!user) {
             }
             if(user) {
+                console.log('liking', req.body.id);
                 var loveList = user.loves_;
-                loveList.push(req.body)
+                loveList.push(req.body.id.toString());
+                console.log('new list', loveList);
                 User.update({_id: req.session.user}, {$set: {loves_: loveList}}, function(err){
+                    if (err){
+                        res.json({'err': 'error updating User'});
+                    }     
+                });
+            }
+        });
+    },
+    dislikeOutfit: function (req, res) {
+        if(req.session.user == undefined) {
+            res.json({'err': 'notLogged'});
+        }
+        User.findOne({_id: req.session.user})
+        .then((user) => {
+            if(!user) {
+            }
+            if(user) {
+                console.log('list before', user.loves_);
+                user.loves_.splice(user.loves_.indexOf(req.body.id.toString()),1);
+                console.log('list after', user.loves_, req.body.id);
+                User.update({_id: req.session.user}, {$set: {loves_: user.loves_}}, function(err){
                     if (err){
                         res.json({'err': 'error updating User'});
                     }     

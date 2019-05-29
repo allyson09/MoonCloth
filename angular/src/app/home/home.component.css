@@ -1,16 +1,48 @@
-#moonAd{
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 20px;
+main {
+    padding: 3rem;
 }
-#dayAd{
-    width: 80%;
-    margin-right: 20%;
-    margin-top: 40px;
+.tinyText {
+    font-size: .7rem;
 }
-#accessAd{
-    width: 80%;
-    margin-left: 20%;
-    margin-top: 40px;
+.boldGray {
+    color: #909090;
 }
+h3 {
+    color: #5d5d5d;
+}
+#about {
+    padding-left: 23%;
+    padding-right: 23%;
+}
+.images {
+    height: 27rem;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+#moonAd {
+    background-image: url("/assets/images/MoonAd.jpg");
+}
+#daylight {
+    background-image: url("/assets/images/daylightad.jpg");
+}
+#access {
+    background-image: url("/assets/images/accessad.jpg");
+}
+@media (max-width: 767px) { 
+    #moonAd {
+        background-image: url("/assets/images/MoonAdCrop.jpg");
+    }
+    #daylight {
+        background-image: url("/assets/images/daylightadCrop.jpg");
+    }
+    #access {
+        background-image: url("/assets/images/accessadCrop.jpg");
+    }
+    #about {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+ }

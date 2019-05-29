@@ -3,6 +3,7 @@ var outfit = require('../controllers/outfits.js');
 var change = require('../controllers/changes.js');
 var order = require('../controllers/orders.js');
 var admin = require('../controllers/admins.js');
+var path = require('path');
 module.exports = function (app) {
 
     // ROUTES//
@@ -24,6 +25,14 @@ module.exports = function (app) {
     app.get('/getDaylight', function(req, res) {
         outfit.getDaylight(req, res);
     });
+    // app.get('/daylight', function(req, res) {
+    //     console.log('got to test route');
+    //     outfit.daylightTest(req, res);
+    // });
+    // app.get('/loves', function(req, res) {
+    //     console.log('got to second test route');
+    //     outfit.lovesTest(req, res);
+    // });
     app.get('/getLikedOutfits', function(req, res) {
         outfit.getLikedOutfits(req, res);
     });
@@ -33,7 +42,14 @@ module.exports = function (app) {
     app.post('/likeOutfit', function(req, res) {
         user.likeOutfit(req, res);
     });
+    app.post('/dislikeOutfit', function(req, res) {
+        console.log('req in routes', req);
+        user.dislikeOutfit(req, res);
+    });
     app.get('/loggedUser', function(req, res) {
         user.loggedUser(req, res);
+    });
+    app.get('/*', function(req, res) {
+        res.sendfile(path.resolve('angular/dist/index.html'));
     });
 };

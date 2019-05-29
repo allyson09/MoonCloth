@@ -117,6 +117,22 @@ export class DaylightComponent implements OnInit {
     }
   }
 
+  heartClicked(outfit) {
+    if (this.checkIfLiked(outfit)) {
+      console.log('in component removing outfit', outfit)
+      this._dataService.dislikeOutfit({
+        id: outfit
+      });
+      this.getlikedOutfits();
+    } else {
+      console.log('in component adding outfit', outfit)
+      this._dataService.likeOutfit({
+        id: outfit
+      });
+      this.getlikedOutfits();
+    }
+  }
+
   getDaylight() {
     this._dataService.getDaylight()
     .then (data => {
@@ -344,11 +360,6 @@ export class DaylightComponent implements OnInit {
       }
     }
     this.outfits = this.allPages[this.currentPageIndex];
-  }
-  heartClicked(outfit) {
-    console.log('outfit sent', outfit)
-    this._dataService.likeOutfit(outfit)
-    this.getlikedOutfits();
   }
   reRoute(page) {
     if (page == 'login') {

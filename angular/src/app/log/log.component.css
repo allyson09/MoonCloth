@@ -2,11 +2,15 @@
     font-weight: bold;
 }
 #wrap{
-    background-color: #f7f2ee;
-    margin-top: 15px;
-    width: 100%;
-    margin-left: 0px;
-    margin-right: 0px;
+    background-color: #ffece9;
+}
+main {
+    margin-top: 3rem;
+}
+section {
+    display: flex;
+    justify-content: center;
+    height: 100%;
 }
 #login{
     background-color: white;
@@ -27,8 +31,8 @@ h1{
     font-weight: lighter;
 }
 .inputs{
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: .5rem;
+    width: 10rem;
 }
 .info{
     margin-left: 40px;
@@ -36,13 +40,25 @@ h1{
     padding-top: 10px;
 }
 .buttons {
-    height: 45px;
-    width: 230px;
+    height: 2.5rem;
+    width: 75%;
     background-color: #c9ebde;
     border: none;
     font-size: 20px;
     font-weight: bold;
     color: #035256;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 1.5rem;
+}
+p {
+    color: gray;
+}
+.clickable {
+    cursor: pointer;
+}
+.link {
+    color: rgb(192, 192, 192);
+}
+.link:hover {
+    color: gray;
 }

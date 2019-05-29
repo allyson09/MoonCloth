@@ -9,6 +9,12 @@ module.exports = {
             res.json({'outfitRes': outfits});
         });
     },
+    daylightTest: function (req, res) {
+        console.log('made it to test method');
+    },
+    // lovesTest: function (req, res) {
+    //     console.log('made it to test method');
+    // },
     getLikedOutfits: function (req, res) {
         User.findOne({_id: req.session.user})
         .then((user) => {
@@ -16,6 +22,7 @@ module.exports = {
                 res.json({'error': 'error finding logged user in get liked outfits'});
             }
             if(user) {
+                console.log('user in get liked outfits', user);
                 Outfit.find({}, function (err, outfits){
                     var likedObjects = [];
                     for(var i = 0; i < user.loves_.length; i++) {

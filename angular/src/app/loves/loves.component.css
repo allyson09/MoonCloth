@@ -22,7 +22,7 @@ main {
 .gray {
     color: gray;
 }
-#currentPage {
+#greeting {
     margin-top: 1em;
     font-style: italic;
 }
@@ -126,4 +126,53 @@ button{
 }
 #loveListArea {
     display: flex;
+}
+@media (max-width: 767px) { 
+    main {
+        margin: 0rem;
+    }
+    #freeShipping {
+        margin-top: 0rem;
+    }
+    .subSection {
+        margin: 0 auto 5px;
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+    #mainArea {
+        display: block;
+        -webkit-transform:  rotate(180deg);
+        transform:  rotate(180deg);
+        padding: 1rem;
+        margin-top: 0rem;
+    }
+    #myLovedItems {
+        border-width: 0em 0em .1em 0em;
+        height: auto;
+        padding: 0rem;
+    }
+    #greeting {
+        padding-left: 1rem;
+    }
+    #privacyPolicy {
+        padding-top: 2rem;
+    }
+    #grayBox {
+        margin-top: 3rem;
+    }
+    .clickHeart {
+        margin-top: 1rem;
+    }
+    #pinkBox {
+        height: auto;
+        margin-bottom: 2rem;
+    }
+    #shareLove, #modStylists {
+        background-color: #f9f6f4;
+        width: auto;
+        height: 10rem;
+        margin-top: 0rem;
+        margin-right: 0rem;
+        margin-bottom: 1rem;
+    }
 }

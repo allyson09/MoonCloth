@@ -33,33 +33,33 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'outfit/:id', component: ItemDetailsComponent},
   {path: 'accesserie/:id', component: ItemDetailsComponent},
-  {
-    path: 'daylight',
-    component: DaylightComponent,
-    children: [
-      {path: 'casual', component: CasualComponent},
-      {path: 'dresses', component: DressesComponent},
-      {path: 'school', component: SchoolComponent}
-    ]
-  },
-  {
-    path: 'moonlight',
-    component: MoonlightComponent,
-    children: [
-      {path: 'disguises', component: DisguisesComponent},
-      {path: 'battle-wear', component: UniformsComponent},
-      {path: 'kingdom', component: KingdomComponent}
-    ]
-  },
-  {
-    path: 'accessories',
-    component: AccessoriesComponent,
-    children: [
-      {path: 'jewelry', component: JewelryComponent},
-      {path: 'shoes', component: ShoesComponent},
-      {path: 'weapons', component: WeaponsComponent}
-    ]
-  }
+  // {
+  //   path: 'daylight',
+  //   component: DaylightComponent,
+  //   children: [
+  //     {path: 'casual', component: CasualComponent},
+  //     {path: 'dresses', component: DressesComponent},
+  //     {path: 'school', component: SchoolComponent}
+  //   ]
+  // },
+  // {
+  //   path: 'moonlight',
+  //   component: MoonlightComponent,
+  //   children: [
+  //     {path: 'disguises', component: DisguisesComponent},
+  //     {path: 'battle-wear', component: UniformsComponent},
+  //     {path: 'kingdom', component: KingdomComponent}
+  //   ]
+  // },
+  // {
+  //   path: 'accessories',
+  //   component: AccessoriesComponent,
+  //   children: [
+  //     {path: 'jewelry', component: JewelryComponent},
+  //     {path: 'shoes', component: ShoesComponent},
+  //     {path: 'weapons', component: WeaponsComponent}
+  //   ]
+  // }
 ];
 
 @NgModule({

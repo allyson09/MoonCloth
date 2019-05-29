@@ -16,6 +16,7 @@ export class DataService {
   register (data) {
     //look inter Observables more later, loggedList[]
     this.loggedList.push(data.email);
+    console.log('about to register', data)
     return this.http.post('/register', data)
       .map(response => response.json()).toPromise();
   }
@@ -57,6 +58,10 @@ export class DataService {
   }
   likeOutfit(data) {
     return this.http.post('/likeOutfit', data)
+      .map(response => response.json()).toPromise();
+  }
+  dislikeOutfit(data) {
+    return this.http.post('/dislikeOutfit', data)
       .map(response => response.json()).toPromise();
   }
 }

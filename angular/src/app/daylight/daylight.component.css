@@ -1,7 +1,6 @@
-#Carousel{
-    width: 100%;
-    margin-top: 20px;
-    z-index: -1;
+#adCarousel {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 #minititle{
     font-style: italic;
@@ -53,9 +52,9 @@ select{
 .itemHearts {
     color: pink;
     position: absolute;
-    top: 0;
-    right: 13px;
-    font-size: 34px;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
 }
 .itemHearts:hover {
     font-weight: bolder;
@@ -63,10 +62,11 @@ select{
 }
 .lovedItemHearts {
     color: red;
+    font-weight: bolder;
     position: absolute;
-    top: 0;
-    right: 13px;
-    font-size: 34px;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
 }
 .lovedItemHearts:hover {
     font-weight: bolder;
@@ -88,13 +88,14 @@ select{
     margin-left: 0px;
 }
 .selectedText {
-    color: black;
+    color: rgb(77, 77, 77);
     margin: .3em;
     font-weight: bold;
 }
 .unselectedText {
-    color: #656565;
+    color: #9b9b9b;
     margin: .3em;
+    font-weight: lighter;
 }
 .pageNumber {
     color: gray;
@@ -128,4 +129,7 @@ select{
 }
 .cursor {
     cursor: pointer;
+}
+#headerPhoto {
+    width: 50rem;
 }
