@@ -25,7 +25,7 @@ For this project, I've been enjoying creating algorithms to handle filtering dis
 ![alt text](https://res.cloudinary.com/allyson09/image/upload/v1557751058/Register.png "Register Page")
 ***
 #### Mobile Images
-<img src="https://res.cloudinary.com/allyson09/image/upload/v1563316519/MobileHome.png" width="10%">
-<img src="https://res.cloudinary.com/allyson09/image/upload/v1563316519/MobileDaylight.png" width="10%">
-<img src="https://res.cloudinary.com/allyson09/image/upload/v1563316520/MobileLoves.png" width="10%">
-<img src="https://res.cloudinary.com/allyson09/image/upload/v1563316520/MobileLog.png" width="10%">
+<img src="https://res.cloudinary.com/allyson09/image/upload/v1563316519/MobileHome.png" width="25%">
+<img src="https://res.cloudinary.com/allyson09/image/upload/v1563316519/MobileDaylight.png" width="25%">
+<img src="https://res.cloudinary.com/allyson09/image/upload/v1563316520/MobileLoves.png" width="25%">
+<img src="https://res.cloudinary.com/allyson09/image/upload/v1563316520/MobileLog.png" width="25%">
