@@ -55,6 +55,7 @@ export class AppComponent implements OnInit, DoCheck {
       } else {
         if(data.loveList.length > 0) {
           this.loveNumber = data.loveList.length;
+          console.log('loved amount', this.loveNumber);
         }
       }
     })
@@ -124,5 +125,13 @@ export class AppComponent implements OnInit, DoCheck {
 
   closeNav(page) {
     this.sideMenu[page] = false;
+  }
+
+  checkIfLiked() {
+    if(this.loveNumber > 0) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

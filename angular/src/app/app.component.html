@@ -33,7 +33,7 @@
       <section class="row header" id="titleRow">
         <i class="fas fa-search boldGray mobileNone abLeft"></i>
         <i class="fas fa-bars mobileOnly hoverFocus" (click)="toggleSideBar()" [ngClass]="{hide: sideBar}"></i>
-        <a href="/" id="title" class="mutedNavy absolute">MoonCloth</a>
+        <a [routerLink]="['']" id="title" class="mutedNavy absolute">MoonCloth</a>
         <p *ngIf="loggedList.length === 0" id="user-side">
           <a [routerLink]="['login']" class="tinyText boldGray tinySpaces mobileNone">Sign In</a>
           <span class="tinyText boldGray tinySpaces mobileNone">|</span>
@@ -47,10 +47,10 @@
         </p>
       </section>
       <section id="mainLinkArea" class="row lightBeige mobileNone">
-        <a (mouseenter)="initMenu('daylightNAV')" (mouseleave)="closeMenu('daylightNAV')" (click)="closeMenu()" class="nav mutedNavy tinyText" [routerLink]="['daylight']">Daylight</a>
-        <a (mouseenter)="initMenu('moonlightNAV')" (mouseleave)="closeMenu('moonlightNAV')" (click)="closeMenu()" class="nav mutedNavy tinyText" [routerLink]="['moonlight']">Moonlight</a>
-        <a (mouseenter)="initMenu('accessoriesNAV')" (mouseleave)="closeMenu('accessoriesNAV')" (click)="closeMenu()" class="nav mutedNavy tinyText" [routerLink]="['accessories']">Accessories</a>
-        <a (mouseenter)="initMenu('moongalleryNAV')" (mouseleave)="closeMenu('moongalleryNAV')" (click)="closeMenu()" class="nav mutedNavy tinyText" [routerLink]="['moon-gallery']">Outfit Photos</a>
+        <a (mouseenter)="initMenu('daylightNAV')" (mouseleave)="closeMenu('daylightNAV')" (click)="closeMenu('daylightNAV')" class="nav mutedNavy tinyText" [routerLink]="['daylight']">Daylight</a>
+        <a (mouseenter)="initMenu('moonlightNAV')" (mouseleave)="closeMenu('moonlightNAV')" (click)="closeMenu('moonlightNAV')" class="nav mutedNavy tinyText" [routerLink]="['moonlight']">Moonlight</a>
+        <a (mouseenter)="initMenu('accessoriesNAV')" (mouseleave)="closeMenu('accessoriesNAV')" (click)="closeMenu('accessoriesNAV')" class="nav mutedNavy tinyText" [routerLink]="['accessories']">Accessories</a>
+        <a (mouseenter)="initMenu('moongalleryNAV')" (mouseleave)="closeMenu('moongalleryNAV')" (click)="closeMenu('moongalleryNAV')" class="nav mutedNavy tinyText" [routerLink]="['moon-gallery']">Outfit Photos</a>
         <a [routerLink]="['admin']" *ngIf="admin === 'yay'">Admin Tools</a>
       </section>
     </nav>

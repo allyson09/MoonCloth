@@ -133,3 +133,31 @@ select{
 #headerPhoto {
     width: 50rem;
 }
+@media (max-width: 767px) { 
+    .noMobile {
+        display: none;
+    }
+    #main, #wrap {
+        margin: 0rem;
+        padding: 0rem;
+    }
+    #mainWrap {
+        margin: 1rem;
+        padding-right: 1rem;
+    }
+    .mobileFilters {
+        height: 2.5rem;
+        background-color: #f7f2ee;
+        width: 48%;
+        border: none;
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0rem;
+    }
+    #itemNav {
+        justify-content: space-between;
+    }
+    .itemPics {
+        height: 12rem;
+    }
+}

@@ -1,5 +1,5 @@
-<div id="wrap">
-    <div id="adCarousel" class="carousel slide" data-ride="carousel">
+<div *ngIf="isLoaded" id="wrap">
+    <div id="adCarousel" class="carousel slide noMobile" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
             <img class="d-block w-100" src="/assets/images/daycar1.jpg" alt="First slide">
@@ -12,11 +12,11 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <p id="minititle" (click)="filtering()">Daylight</p>
+    <div class="row noMobile">
+        <p id="minititle" (click)="filtering()" class="noMobile">Daylight</p>
     </div>
-    <div class="row">
-        <div id="filter" class="col-md-3">
+    <div class="row" id="mainWrap">
+        <div id="filter" class="col-md-3 noMobile">
             <div>
                 <h3>Category</h3>
                 <div class="row">
@@ -60,19 +60,19 @@
             </div>
         </div>
         <div id="main" class="col-md-9">
-            <h2>Daylight</h2>
+            <h2 class="noMobile">Daylight</h2>
             <div id="itemNav" class="row">
-                <select class="col-md-2" (change)="orderFilter($event)">
+                <select class="col-md-2 mobileFilters" (change)="orderFilter($event)">
                     <option>Newest</option>
                     <option>Cheapest</option>
                     <option>Popular</option>
                 </select>
-                <select class="col-md-2" (change)="amountFilter($event)">
+                <select class="col-md-2 mobileFilters" (change)="amountFilter($event)">
                     <option>Show 25</option>
                     <option>Show 50</option>
                     <option>Show 100</option>
                 </select>
-                <div class="col-md-6 align-self-end">
+                <div class="col-md-6 align-self-end noMobile">
                     <span>{{(outfits.length * currentPageIndex) + 1}} - {{outfits.length * (currentPageIndex + 1)}} of {{totalOutfitObjects.length}} Results</span>
                     <span class="cursor" (click)="changePageIndex('previous')"><</span>
                         <span *ngFor="let page of allPages; let i = index">

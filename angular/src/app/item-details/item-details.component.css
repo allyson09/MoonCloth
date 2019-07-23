@@ -103,3 +103,8 @@ hr {
     cursor: pointer;
     color: #035256cc;
 }
+@media (max-width: 767px) { 
+    .noMobile {
+        display: none;
+    }
+}

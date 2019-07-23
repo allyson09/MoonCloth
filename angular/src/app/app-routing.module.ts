@@ -22,7 +22,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', pathMatch: 'full', component: HomeComponent},
   {path: 'join', component: RegComponent},
   {path: 'login', component: LogComponent},
   {path: 'loves', component: LovesComponent},

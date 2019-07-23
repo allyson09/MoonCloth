@@ -31,6 +31,7 @@ export class DaylightComponent implements OnInit {
     // this.sessionId = this._dataService.sessionId;
   }
   
+  isLoaded = false;
   totalOutfitObjects;
   outfits;
   filtersON = false;
@@ -125,11 +126,13 @@ export class DaylightComponent implements OnInit {
       });
       this.getlikedOutfits();
     } else {
-      console.log('in component adding outfit', outfit)
-      this._dataService.likeOutfit({
-        id: outfit
-      });
-      this.getlikedOutfits();
+      if (!this.regPrompt) {
+        console.log('in component adding outfit', outfit)
+        this._dataService.likeOutfit({
+          id: outfit
+        });
+        this.getlikedOutfits();
+      }
     }
   }
 
@@ -139,6 +142,8 @@ export class DaylightComponent implements OnInit {
       this.totalOutfitObjects = data.outfitRes.reverse();
       this.allPages = this.makePages(this.totalOutfitObjects);
       this.outfits = this.allPages[this.currentPageIndex];
+      console.log('is loaded');
+      this.isLoaded = true;
     });
     this.loggedList = this._dataService.getloggedList();
   }

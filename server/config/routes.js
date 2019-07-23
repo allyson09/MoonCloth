@@ -1,9 +1,14 @@
 var user = require('../controllers/users.js');
 var outfit = require('../controllers/outfits.js');
-var change = require('../controllers/changes.js');
-var order = require('../controllers/orders.js');
 var admin = require('../controllers/admins.js');
 var path = require('path');
+var secrets = require('../../secrets');
+var jwt = require('express-jwt');
+var auth = jwt({
+    secret: secrets.shhhh,
+    userProperty: 'payload'
+});
+
 module.exports = function (app) {
 
     // ROUTES//
@@ -23,6 +28,9 @@ module.exports = function (app) {
         user.admincheck(req, res);
     });
     app.get('/getDaylight', function(req, res) {
+        outfit.getDaylight(req, res);
+    });
+    app.get('/admin', auth, ctrlProfile.profileRead, function(req, res) {
         outfit.getDaylight(req, res);
     });
     // app.get('/daylight', function(req, res) {

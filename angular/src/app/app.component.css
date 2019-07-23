@@ -277,6 +277,29 @@ footer {
 section.hide {
     display: none;
 }
+.itemHearts {
+    color: pink;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+}
+.itemHearts:hover {
+    font-weight: bolder;
+    cursor: pointer;
+}
+.lovedItemHearts {
+    color: red;
+    font-weight: bolder;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+}
+.lovedItemHearts:hover {
+    font-weight: bolder;
+    cursor: pointer;
+}
 @media (max-width: 767px) { 
     .mobileNone, #topAdd, #mainLinkArea {
         display: none;
