@@ -4,3 +4,4 @@
 /angular/node_modules
 /angular/package.json
 /angular/package-lock.json
+secrets.js
